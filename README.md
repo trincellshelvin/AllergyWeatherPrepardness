@@ -9,5 +9,6 @@ The app will also include sort of a checklist for suffers to use to get prepared
 ## WireFrame
 
 The wireframe breaks down the project of what is to be expected for each page. Unfortunately, it doesn't break down the javascript coding involved in the app's design. 
-![Wireframe Screenshot](https://res.cloudinary.com/dgls7u3iq/image/upload/v1725933584/Screenshot_2024-09-09_205659_gxp1hh.png)
 [Link to Wireframe](https://www.canva.com/design/DAGQTJwZiLk/ixFmhH4nGKURv3vsMbKLoQ/edit?utm_content=DAGQTJwZiLk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+
+![Wireframe Screenshot](https://res.cloudinary.com/dgls7u3iq/image/upload/v1725933584/Screenshot_2024-09-09_205659_gxp1hh.png)
