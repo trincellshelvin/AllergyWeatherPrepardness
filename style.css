@@ -21,9 +21,6 @@ main {
     margin-left: 6%;
 }
 
-a {
-    text-decoration: none;
-}
 .hero-list {
     justify-content: space-around;
 }

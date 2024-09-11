@@ -12,9 +12,19 @@
 
 <body>
     <main>
-        <nav>
-            <a href="index.html">Allergy Preparedness Home</a> | <a href="about.html">About Designer</a> |
-            <a href="checklist.html">Printable Checklist</a>
+        <nav id="navlinks">
+            <button type="button" class="btn btn-outline-primary">
+                <a href="index.html">Allergy Preparedness Home</a>
+            </button> 
+            <button type="button" class="btn btn-outline-primary">
+                <a href="about.html">About Designer</a>
+            </button> 
+            <button type="button" class="btn btn-outline-primary">
+                <a href="checklist.html">Printable Checklist</a>
+            </button>
+            <button type="button" class="btn btn-outline-primary">
+                <a href="https://www.211.org/get-help/disaster-recovery">211 Disaster Recovery</a>
+            </button> 
         </nav>
         <header>
             <div class="hero-image">
@@ -39,8 +49,8 @@
             <div class="card-body">
                 <h5 class="card-title">Area Index Data</h5>
                 <p class="card-text" id="airOutput"></p>
-                <a href="https://www.211.org/get-help/disaster-recovery" class="card-link" style="font-weight: bold;">211 Disaster Recovery</a> <br>
-                <a href="checklist.html"class="card-link" style="font-weight: bold;">Printable Checklist</a>
+                <a href="https://www.211.org/get-help/disaster-recovery" class="card-link" style="font-weight: bold;" itemid="navlinks">211 Disaster Recovery</a> <br>
+                <a href="checklist.html"class="card-link" style="font-weight: bold;" id="navlinks">Printable Checklist</a>
             </div>
         </div>
     </main>
