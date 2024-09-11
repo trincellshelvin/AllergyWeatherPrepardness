@@ -1,0 +1,22 @@
+.hero-image {
+    background-image: linear-gradient(rgba(256,256,256,0), rgba(256,256,256,1)), url(weathereventsallergiesandrespiratory.png);
+    height: 85vh;
+    background-size: cover;
+    position: relative;
+}
+
+.hero-text {
+    color: black;
+    position:absolute;
+    bottom: 10%;
+    right: 30px;
+}
+
+.hero-paragraph {
+    justify-content: space-around;
+}
+main {
+    background-color: rgb(226, 229, 228);
+    margin-right: 5%;
+    margin-left: 5%;
+}
