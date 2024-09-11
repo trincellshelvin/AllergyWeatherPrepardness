@@ -11,8 +11,39 @@
 </head>
 
 <body>
-
-    
+    <main>
+        <nav>
+            <a href="index.html">Allergy Preparedness Home</a> | <a href="about.html">About Designer</a> |
+            <a href="checklist.html">Printable Checklist</a>
+        </nav>
+        <header>
+            <div class="hero-image">
+                <div class="hero-text">
+                    <h1>Allergy Weather Preparedness</h1>
+                    <div class="hero-paragraph">
+                        <p>We must all get prepared for those emergency weather events.</p>
+                        <p>Get your Air Quality & Pollen Index Data Below</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div>
+            <form action="index.html">
+                <label for="zipcode">Zip or Postal Code:</label>
+                <input type="text" name="zipcode" id="zipcode">
+                <p>Click Below for Air Quality and Pollen Data for your Area...</p>
+                <button>Click for AQI & Pollen Index</button>
+            </form>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Area Index Data</h5>
+                <p class="card-text" id="airOutput"></p>
+                <a href="https://www.211.org/get-help/disaster-recovery" class="card-link" style="font-weight: bold;">211 Disaster Recovery</a> <br>
+                <a href="checklist.html"class="card-link" style="font-weight: bold;">Printable Checklist</a>
+            </div>
+        </div>
+    </main>
 
     <script src="allergyweatherpreparedness.js"></script>
     <script src="script.js"></script>
