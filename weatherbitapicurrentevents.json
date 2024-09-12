@@ -1,53 +1,53 @@
 {
-  "count": 1,
-  "data": [
-    {
-      "app_temp": 24.5,
-      "aqi": 50,
-      "city_name": "Baton Rouge",
-      "clouds": 100,
-      "country_code": "US",
-      "datetime": "2024-09-11:15",
-      "dewpt": 22.7,
-      "dhi": 105,
-      "dni": 839,
-      "elev_angle": 39.96,
-      "ghi": 637,
-      "gust": 10.9,
-      "h_angle": -30,
-      "lat": 30.4485,
-      "lon": -91.13,
-      "ob_time": "2024-09-11 15:11",
-      "pod": "d",
-      "precip": 5.5742188,
-      "pres": 1008,
-      "rh": 95,
-      "slp": 1010,
-      "snow": 0,
-      "solar_rad": 63.7,
-      "sources": [
-        "rtma",
-        "radar",
-        "satellite"
-      ],
-      "state_code": "LA",
-      "station": "AV521",
-      "sunrise": "11:47",
-      "sunset": "00:14",
-      "temp": 23.6,
-      "timezone": "America/Chicago",
-      "ts": 1726067468,
-      "uv": 1,
-      "vis": 12,
-      "weather": {
-        "description": "Moderate rain",
-        "code": 501,
-        "icon": "r02d"
-      },
-      "wind_cdir": "ENE",
-      "wind_cdir_full": "east-northeast",
-      "wind_dir": 71,
-      "wind_spd": 5.4
-    }
-  ]
+    "count": 1,
+    "data": [
+        {
+            "app_temp": 24.5,
+            "aqi": 50,
+            "city_name": "Baton Rouge",
+            "clouds": 100,
+            "country_code": "US",
+            "datetime": "2024-09-11:15",
+            "dewpt": 22.7,
+            "dhi": 105,
+            "dni": 839,
+            "elev_angle": 39.96,
+            "ghi": 637,
+            "gust": 10.9,
+            "h_angle": -30,
+            "lat": 30.4485,
+            "lon": -91.13,
+            "ob_time": "2024-09-11 15:11",
+            "pod": "d",
+            "precip": 5.5742188,
+            "pres": 1008,
+            "rh": 95,
+            "slp": 1010,
+            "snow": 0,
+            "solar_rad": 63.7,
+            "sources": [
+                "rtma",
+                "radar",
+                "satellite"
+            ],
+            "state_code": "LA",
+            "station": "AV521",
+            "sunrise": "11:47",
+            "sunset": "00:14",
+            "temp": 23.6,
+            "timezone": "America/Chicago",
+            "ts": 1726067468,
+            "uv": 1,
+            "vis": 12,
+            "weather": {
+                "description": "Moderate rain",
+                "code": 501,
+                "icon": "r02d"
+            },
+            "wind_cdir": "ENE",
+            "wind_cdir_full": "east-northeast",
+            "wind_dir": 71,
+            "wind_spd": 5.4
+        }
+    ]
 }
