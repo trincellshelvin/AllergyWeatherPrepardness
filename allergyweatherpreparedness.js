@@ -48,6 +48,7 @@ async function getCurrentAPI() {
 
     } catch (error) {
         airOutput.textContent = "Error fetching data. Please check your inputs.";
+        console.log(error);
     }
 }
 
