@@ -11,46 +11,53 @@
 </head>
 
 <body>
-    <main>
-        <nav id="navlinks">
-            <button type="button" class="btn btn-outline-primary">
-                <a href="index.html">Allergy Preparedness Home</a>
-            </button> 
-            <button type="button" class="btn btn-outline-primary">
-                <a href="about.html">About Designer</a>
-            </button> 
-            <button type="button" class="btn btn-outline-primary">
-                <a href="checklist.html">Printable Checklist</a>
-            </button>
-            <button type="button" class="btn btn-outline-primary">
-                <a href="https://www.211.org/get-help/disaster-recovery">211 Disaster Recovery</a>
-            </button> 
-        </nav>
-        <header>
-            <div class="hero-image">
-                <div class="hero-text">
-                    <h1>Allergy Weather Preparedness</h1>
-                    <div class="hero-paragraph">
-                        <p>We must all get prepared for those emergency weather events.</p>
-                        <p>Get your Air Quality & Pollen Index Data Below</p>
-                    </div>
+    <nav id="navlinks">
+        <button type="button" class="btn btn-outline-primary">
+            <a href="index.html">Allergy Preparedness Home</a>
+        </button>
+        <button type="button" class="btn btn-outline-primary">
+            <a href="about.html">About Designer</a>
+        </button>
+        <button type="button" class="btn btn-outline-primary">
+            <a href="checklist.html">Printable Checklist</a>
+        </button>
+        <button type="button" class="btn btn-outline-primary">
+            <a href="https://www.211.org/get-help/disaster-recovery">211 Disaster Recovery</a>
+        </button>
+    </nav>
+    <header>
+        <div class="hero-image">
+            <div class="hero-text">
+                <h1>Allergy Weather Preparedness</h1>
+                <div class="hero-paragraph">
+                    <p>We must all get prepared for those emergency weather events.</p>
+                    <p>Get your Air Quality Data Below</p>
                 </div>
             </div>
-        </header>
-        <div>
-            <form action="index.html">
-                <label for="zipcode">Zip or Postal Code:</label>
-                <input type="text" name="zipcode" id="zipcode">
-                <p>Click Below for Air Quality and Pollen Data for your Area...</p>
-                <button>Click for AQI & Pollen Index</button>
-            </form>
         </div>
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">Area Index Data</h5>
-                <p class="card-text" id="airOutput"></p>
-                <a href="https://www.211.org/get-help/disaster-recovery" class="card-link" style="font-weight: bold;" itemid="navlinks">211 Disaster Recovery</a> <br>
-                <a href="checklist.html"class="card-link" style="font-weight: bold;" id="navlinks">Printable Checklist</a>
+    </header>
+
+    <main>
+        <div class="container content-align-center">
+            <div class="row align-items-end">
+                <div class="col-lg-6">
+                    <form>
+                        <label for="postal_code">Zip or Postal Code:</label>
+                        <input type="text" required name="postal_code" id="postal_code"><br>
+                        <p><em><b>Below for Air Quality for your Area...</b></em></p>
+                        <button type="button" id="aqidata">Click for AQI</button>
+                    </form>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Area Index Data</h5>
+                            <p class="card-text" id="airOutput"></p>
+                            <a href="https://www.211.org/get-help/disaster-recovery" class="card-link" style="font-weight: bold;" itemid="navlinks">211 Disaster Recovery</a> <br>
+                            <a href="checklist.html" class="card-link" style="font-weight: bold;" id="navlinks">Printable Checklist</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
