@@ -1,15 +1,15 @@
-let postal_codeInput = document.getElementById("postal_code");
-let countrynameInput = document.getElementById("countryname");
-let airOutput = document.getElementById("airOutput");
-
 async function getCurrentAPI() {
     console.log("Hello from Allergy Weather Preparedness APP!");
+    let postal_codeInput = document.getElementById("postal_code");
+    let countrynameInput = document.getElementById("countryname");
+    let airOutput = document.getElementById("airOutput");
     let postal_code = postal_codeInput.value;
-    let apiKey = 'YOUR_API_KEY'; 
+    let countryname = countrynameInput.value;
+    let apiKey = 'YOUR_API_KEY';
     try {
-        let result = await fetch(`https://api.weatherbit.io/v2.0/current?key=${apiKey}&postal_code=${postal_code}&country=${country}`);
+        let result = await fetch(`https://api.weatherbit.io/v2.0/current?key=${apiKey}&postal_code=${postal_code}&country=${countryname}`);
         if (!result.ok) {
-            throw new Error("");
+            throw new Error("Failed to fetch data");
         }
         let data = await result.json();
         console.log(data);
@@ -19,7 +19,6 @@ async function getCurrentAPI() {
         let city = weatherData.city_name;
         let state_code = weatherData.state_code;
         let country = weatherData.country_code;
-        let postal_code = weatherData.postal_code;
         let temp = weatherData.temp;
         let description = weatherData.weather.description;
         let wind_spd = weatherData.wind_spd;
@@ -55,7 +54,11 @@ async function getCurrentAPI() {
 document.getElementById("aqidata").addEventListener("click", getCurrentAPI);
 
 // Render saved data from local storage on page load
-window.onload = function() {
+window.onload = function () {
+    let postal_codeInput = document.getElementById("postal_code");
+    let countrynameInput = document.getElementById("countryname");
+    let airOutput = document.getElementById("airOutput");
+
     if (localStorage.getItem("postal_code")) {
         postal_codeInput.value = localStorage.getItem("postal_code");
         countrynameInput.value = localStorage.getItem("countryname");
