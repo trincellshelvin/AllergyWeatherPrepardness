@@ -38,33 +38,57 @@
     </header>
 
     <main>
-        <div class="container content-align-center">
-            <div class="row align-items-end">
-                <div class="col-lg-6">
+        <div class="container text-justify">
+            <div class="row row-col-2">
+                <div class="col-md-6">
                     <form>
-                        <label for="postal_code">Zip or Postal Code:</label>
-                        <input type="text" required name="postal_code" id="postal_code"><br>
-                        <label for="countryname">Country</label>
-                        <input type="text" required name="countryname" id="countryname">
+                        <input type="text" required name="postal_code" id="postal_code"
+                            placeholder="Zip or Postal Code:"><br>
+                        <input type="text" required name="countryname" id="countryname" placeholder="Country">
                         <p><em><b>Below for Air Quality for your Area...</b></em></p>
                         <button type="button" id="aqidata">Click for AQI</button>
                     </form>
-                </div>
-                <div class="col-lg-6">
-                    <div class="card" style="width: 18rem;">
+                    <div class="card" style="width: 40rem; background-color: aquamarine;">
                         <div class="card-body">
                             <h5 class="card-title">Area Index Data</h5>
                             <p class="card-text" id="airOutput"></p>
-                            <a href="https://www.211.org/get-help/disaster-recovery" class="card-link" style="font-weight: bold;" itemid="navlinks">211 Disaster Recovery</a> <br>
-                            <a href="checklist.html" class="card-link" style="font-weight: bold;" id="navlinks">Printable Checklist</a>
+                            <a href="https://www.211.org/get-help/disaster-recovery" class="card-link"
+                                style="font-weight: bold;" itemid="navlinks">211 Disaster Recovery</a> <br>
+                            <a href="checklist.html" class="card-link" style="font-weight: bold;"
+                                id="navlinks">Printable
+                                Checklist</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h5>Staying Healthy During Weather Events. Check Food Facts</h5>
+                    <form>
+                        <input type="text" id="query" placeholder="Enter food item">
+                        <button id="searchButton">Search</button>
+                    </form>
+                    <div class="card" style="width: 40rem; background-color: aquamarine;">
+                        <div class="card-body">
+                            <h5 class="card-title">Your Results..</h5>
+                            <p class="card-text" id="results"></p>
+                            <button type="button" class="btn-outline-primary"><a
+                                    href="https://www.healthline.com/health/home-remedies-for-allergies">Natural
+                                    Health
+                                    Resources-Healthline</a></button>
+                            <button type="button" class="btn-outline-primary"><a
+                                    href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8532887/">An Introduction to
+                                    Rhinitis-NIH
+                                    National Library of Medicine</a></button>
+                            <button type="button" class="btn-outline-primary"><a
+                                    href="https://www.medicinenet.com/best_home_remedies_for_upper_respiratory_infection/article.htm">Examples
+                                    of Home Remedies</a></button>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
     </main>
 
     <script src="allergyweatherpreparedness.js"></script>
+    <script src="fooddata.js"></script>
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
