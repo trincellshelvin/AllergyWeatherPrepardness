@@ -81,11 +81,6 @@ a:link, a:visited {
     .hero-paragraph3 {
         justify-content: space-around;
     }
-    
-    .hero-container3 {
-        text-align: center;
-    
-    }
 
     .hero-image4 {
         background-image: linear-gradient(rgba(256,256,256,0), rgba(256,256,256,10)), url(musicaltrivia.png);
@@ -103,11 +98,6 @@ a:link, a:visited {
     
     .hero-paragraph4 {
         justify-content: space-around;
-    }
-    
-    .hero-container4 {
-        text-align: center;
-    
     }
 
     .hero-image5 {
@@ -128,11 +118,6 @@ a:link, a:visited {
         justify-content: space-around;
     }
     
-    .hero-container5 {
-        text-align: center;
-    
-    }
-
     .hero-image6 {
         background-image: linear-gradient(rgba(256,256,256,0), rgba(256,256,256,10)), url(cartoonstrivia.png);
         height: 85vh;
@@ -149,9 +134,4 @@ a:link, a:visited {
     
     .hero-paragraph6 {
         justify-content: space-around;
-    }
-    
-    .hero-container6 {
-        text-align: center;
-    
     }
