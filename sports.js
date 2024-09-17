@@ -23,10 +23,16 @@ function displayCurrentQuestion() {
 
     if (currentQuestionIndex < questions.length) {
         const question = questions[currentQuestionIndex];
+        const choices = [...question.incorrect_answers, question.correct_answer].sort(() => Math.random() - 0.5);
         const questionElement = document.createElement('div');
         questionElement.innerHTML = `
             <p>${currentQuestionIndex + 1}. ${question.question}</p>
-            <input type="text" id="answer" placeholder="Your answer" class="form-control">
+            ${choices.map(choice => `
+                <div>
+                    <input type="radio" name="answer" value="${choice}">
+                    <label>${choice}</label>
+                </div>
+            `).join('')}
             <button class="btn btn-primary" onclick="checkAnswer('${question.correct_answer}')">Submit</button>
         `;
         triviaDiv.appendChild(questionElement);
@@ -37,8 +43,8 @@ function displayCurrentQuestion() {
 }
 
 function checkAnswer(correctAnswer) {
-    const userAnswer = document.getElementById('answer').value;
-    if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
+    const userAnswer = document.querySelector('input[name="answer"]:checked').value;
+    if (userAnswer === correctAnswer) {
         score++;
     }
     currentQuestionIndex++;
