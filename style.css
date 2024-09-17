@@ -65,7 +65,13 @@ a:link, a:visited {
     nav {
         align-content: center;
     }
-/* TV Trivia*/
+    
+    .card {
+        background: rgba(255, 255, 255, 0.8);
+        border: none;
+    }
+
+    /* TV Trivia*/
     .hero-image3 {
         background-image: linear-gradient(rgba(256,256,256,0), rgba(256,256,256,10)), url(tvtrivia.png);
         height: 85vh;
@@ -126,10 +132,6 @@ a:link, a:visited {
         justify-content: space-around;
     }
     
-    .card {
-        background: rgba(255, 255, 255, 0.8);
-        border: none;
-    }
     /*Cartoons Trivia*/
     .hero-image6 {
         background-image: linear-gradient(rgba(256,256,256,0), rgba(256,256,256,10)), url(cartoonstrivia.png);

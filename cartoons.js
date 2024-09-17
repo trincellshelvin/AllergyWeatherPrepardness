@@ -86,3 +86,46 @@ function loadUserData() {
 }
 
 loadUserData();
+
+window.addEventListener('beforeunload', () => {
+    localStorage.removeItem('userName');
+    localStorage.removeItem('finalScore');
+});
+
+window.addEventListener('load', () => {
+    loadUserData();
+});
+
+function saveUserData(username, score) {
+    localStorage.setItem('username', username);
+    localStorage.setItem('userScore', score);
+}
+
+function getUserData() {
+    return {
+        username: localStorage.getItem('username') || 'Guest',
+        score: localStorage.getItem('userScore') || 0
+    };
+}
+
+function updateUserInfoDisplay(username, score) {
+    document.getElementById('username').textContent = username;
+    document.getElementById('score').textContent = score;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const userData = getUserData();
+    updateUserInfoDisplay(userData.username, userData.score);
+});
+
+function updateScore(newScore) {
+    const userData = getUserData();
+    saveUserData(userData.username, newScore);
+    updateUserInfoDisplay(userData.username, newScore);
+}
+
+function setUsername(username) {
+    const userData = getUserData();
+    saveUserData(username, userData.score);
+    updateUserInfoDisplay(username, userData.score);
+}

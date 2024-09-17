@@ -66,13 +66,11 @@ function loadSportsQuestionsFromLocalStorage() {
 
 document.getElementById('getQuestions').addEventListener('click', getSportsTriviaQuestions);
 
-loadSportsQuestionsFromLocalStorage();
-
-document.getElementById('saveUserName').addEventListener('click', () => {
+function saveUserName() {
     const userName = document.getElementById('userName').value;
     localStorage.setItem('userName', userName);
     alert('User name saved!');
-});
+}
 
 function loadUserData() {
     const userName = localStorage.getItem('userName');
@@ -85,4 +83,61 @@ function loadUserData() {
     }
 }
 
-loadUserData();
+function saveProgress() {
+    const progressData = {
+        level: currentQuestionIndex,
+        score: score
+    };
+    localStorage.setItem('progressData', JSON.stringify(progressData));
+}
+
+function loadProgress() {
+    const progressData = JSON.parse(localStorage.getItem('progressData'));
+    if (progressData) {
+        currentQuestionIndex = progressData.level;
+        score = progressData.score;
+        displayCurrentQuestion();
+    }
+}
+
+function saveUserData(username, score) {
+    localStorage.setItem('username', username);
+    localStorage.setItem('userScore', score);
+}
+
+function getUserData() {
+    return {
+        username: localStorage.getItem('username') || 'Guest',
+        score: localStorage.getItem('userScore') || 0
+    };
+}
+
+function updateUserInfoDisplay(username, score) {
+    document.getElementById('username').textContent = username;
+    document.getElementById('score').textContent = score;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    loadUserData();
+    loadProgress();
+    const userData = getUserData();
+    updateUserInfoDisplay(userData.username, userData.score);
+});
+
+window.addEventListener('beforeunload', () => {
+    saveProgress();
+    localStorage.removeItem('userName');
+    localStorage.removeItem('finalScore');
+});
+
+function updateScore(newScore) {
+    const userData = getUserData();
+    saveUserData(userData.username, newScore);
+    updateUserInfoDisplay(userData.username, newScore);
+}
+
+function setUsername(username) {
+    const userData = getUserData();
+    saveUserData(username, userData.score);
+    updateUserInfoDisplay(username, userData.score);
+}
