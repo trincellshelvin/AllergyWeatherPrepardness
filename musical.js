@@ -23,10 +23,16 @@ function displayCurrentQuestion() {
 
     if (currentQuestionIndex < questions.length) {
         const question = questions[currentQuestionIndex];
+        const choices = [...question.incorrect_answers, question.correct_answer].sort(() => Math.random() - 0.5);
         const questionElement = document.createElement('div');
         questionElement.innerHTML = `
             <p>${currentQuestionIndex + 1}. ${question.question}</p>
-            <input type="text" id="answer" placeholder="Your answer" class="form-control">
+            ${choices.map(choice => `
+                <div>
+                    <input type="radio" name="choice" value="${choice}">
+                    <label>${choice}</label>
+                </div>
+            `).join('')}
             <button class="btn btn-primary" onclick="checkAnswer('${question.correct_answer}')">Submit</button>
         `;
         triviaDiv.appendChild(questionElement);
@@ -37,8 +43,8 @@ function displayCurrentQuestion() {
 }
 
 function checkAnswer(correctAnswer) {
-    const userAnswer = document.getElementById('answer').value;
-    if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
+    const userAnswer = document.querySelector('input[name="choice"]:checked').value;
+    if (userAnswer === correctAnswer) {
         score++;
     }
     currentQuestionIndex++;
@@ -86,3 +92,65 @@ function loadUserData() {
 }
 
 loadUserData();
+
+window.addEventListener('beforeunload', () => {
+    localStorage.removeItem('userName');
+    localStorage.removeItem('finalScore');
+});
+
+window.addEventListener('load', () => {
+    loadUserData();
+});
+
+function saveProgress() {
+    const progressData = {
+        level: currentQuestionIndex,
+        score: score
+    };
+    localStorage.setItem('progressData', JSON.stringify(progressData));
+}
+
+function loadProgress() {
+    const progressData = JSON.parse(localStorage.getItem('progressData'));
+    if (progressData) {
+        currentQuestionIndex = progressData.level;
+        score = progressData.score;
+    }
+}
+
+window.addEventListener('load', loadProgress);
+window.addEventListener('beforeunload', saveProgress);
+
+function saveUserData(username, score) {
+    localStorage.setItem('username', username);
+    localStorage.setItem('userScore', score);
+}
+
+function getUserData() {
+    return {
+        username: localStorage.getItem('username') || 'Guest',
+        score: localStorage.getItem('userScore') || 0
+    };
+}
+
+function updateUserInfoDisplay(username, score) {
+    document.getElementById('username').textContent = username;
+    document.getElementById('score').textContent = score;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const userData = getUserData();
+    updateUserInfoDisplay(userData.username, userData.score);
+});
+
+function updateScore(newScore) {
+    const userData = getUserData();
+    saveUserData(userData.username, newScore);
+    updateUserInfoDisplay(userData.username, newScore);
+}
+
+function setUsername(username) {
+    const userData = getUserData();
+    saveUserData(username, userData.score);
+    updateUserInfoDisplay(username, userData.score);
+}
