@@ -1,32 +1,39 @@
-const url = 'https://opentdb.com/api.php?amount=30&category=14&type=boolean';
+const url = 'https://opentdb.com/api.php?amount=30&category=21';
 const ONE_DAY = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
 
 let currentQuestionIndex = 0;
 let score = 0;
 
-async function gettvTriviaQuestions() {
+async function getSportsTriviaQuestions() {
     try {
         let response = await fetch(url);
         let data = await response.json();
-        localStorage.setItem('tvTriviaQuestions', JSON.stringify(data.results));
-        localStorage.setItem('tvFetchTimestamp', Date.now());
+        localStorage.setItem('sportsTriviaQuestions', JSON.stringify(data.results));
+        localStorage.setItem('sportsFetchTimestamp', Date.now());
         displayCurrentQuestion();
     } catch (error) {
-        console.error('Error fetching tv trivia questions:', error);
+        console.error('Error fetching sports trivia questions:', error);
+        alert('Failed to fetch trivia questions. Please try again later.');
     }
 }
 
 function displayCurrentQuestion() {
-    const questions = JSON.parse(localStorage.getItem('tvTriviaQuestions'));
-    const triviaDiv = document.getElementById('tvtrivia-container');
+    const questions = JSON.parse(localStorage.getItem('sportsTriviaQuestions'));
+    const triviaDiv = document.getElementById('sportstrivia-container');
     triviaDiv.innerHTML = ''; // Clear any existing content
 
     if (currentQuestionIndex < questions.length) {
         const question = questions[currentQuestionIndex];
+        const choices = [...question.incorrect_answers, question.correct_answer].sort(() => Math.random() - 0.5);
         const questionElement = document.createElement('div');
         questionElement.innerHTML = `
             <p>${currentQuestionIndex + 1}. ${question.question}</p>
-            <input type="text" id="answer" placeholder="Your answer" class="form-control">
+            ${choices.map(choice => `
+                <div>
+                    <input type="radio" name="choice" value="${choice}">
+                    <label>${choice}</label>
+                </div>
+            `).join('')}
             <button class="btn btn-primary" onclick="checkAnswer('${question.correct_answer}')">Submit</button>
         `;
         triviaDiv.appendChild(questionElement);
@@ -37,8 +44,8 @@ function displayCurrentQuestion() {
 }
 
 function checkAnswer(correctAnswer) {
-    const userAnswer = document.getElementById('answer').value;
-    if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
+    const selectedChoice = document.querySelector('input[name="choice"]:checked');
+    if (selectedChoice && selectedChoice.value === correctAnswer) {
         score++;
     }
     currentQuestionIndex++;
@@ -50,9 +57,9 @@ function updateScore() {
     document.getElementById('score').textContent = score;
 }
 
-function loadtvQuestionsFromLocalStorage() {
-    const storedQuestions = localStorage.getItem('tvTriviaQuestions');
-    const fetchTimestamp = localStorage.getItem('tvFetchTimestamp');
+function loadSportsQuestionsFromLocalStorage() {
+    const storedQuestions = localStorage.getItem('sportsTriviaQuestions');
+    const fetchTimestamp = localStorage.getItem('sportsFetchTimestamp');
 
     if (storedQuestions && fetchTimestamp) {
         const age = Date.now() - fetchTimestamp;
@@ -61,18 +68,16 @@ function loadtvQuestionsFromLocalStorage() {
             return;
         }
     }
-    gettvTriviaQuestions();
+    getSportsTriviaQuestions();
 }
 
-document.getElementById('getQuestions').addEventListener('click', gettvTriviaQuestions);
+document.getElementById('getQuestions').addEventListener('click', getSportsTriviaQuestions);
 
-loadtvQuestionsFromLocalStorage();
-
-document.getElementById('saveUserName').addEventListener('click', () => {
+function saveUserName() {
     const userName = document.getElementById('userName').value;
     localStorage.setItem('userName', userName);
     alert('User name saved!');
-});
+}
 
 function loadUserData() {
     const userName = localStorage.getItem('userName');
@@ -85,4 +90,53 @@ function loadUserData() {
     }
 }
 
-loadUserData();
+function saveProgress() {
+    const progressData = {
+        level: currentQuestionIndex,
+        score: score
+    };
+    localStorage.setItem('progressData', JSON.stringify(progressData));
+}
+
+function loadProgress() {
+    const progressData = JSON.parse(localStorage.getItem('progressData'));
+    if (progressData) {
+        currentQuestionIndex = progressData.level;
+        score = progressData.score;
+        displayCurrentQuestion();
+    }
+}
+
+function saveUserData(username, score) {
+    localStorage.setItem('username', username);
+    localStorage.setItem('userScore', score);
+}
+
+function getUserData() {
+    return {
+        username: localStorage.getItem('username') || 'Guest',
+        score: localStorage.getItem('userScore') || 0
+    };
+}
+
+function updateUserInfoDisplay(username, score) {
+    document.getElementById('username').textContent = username;
+    document.getElementById('score').textContent = score;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    loadUserData();
+    loadProgress();
+    const userData = getUserData();
+    updateUserInfoDisplay(userData.username, userData.score);
+});
+
+window.addEventListener('beforeunload', () => {
+    saveProgress();
+});
+
+function setUsername(username) {
+    const userData = getUserData();
+    saveUserData(username, userData.score);
+    updateUserInfoDisplay(username, userData.score);
+}
