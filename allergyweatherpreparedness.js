@@ -6,7 +6,7 @@ async function getCurrentAPI() {
     let postal_code = postal_codeInput.value;
     let countryname = countrynameInput.value;
     let apiKey = '952e27abaa244647bf48d771ba629886';
-    let url = `https://api.weatherbit.io/v2.0/current?key=${apiKey}&postal_code=${postal_code}&country=${countryname}`
+    let url = `https://api.weatherbit.io/v2.0/current?key=${apiKey}&postal_code=${postal_code}&country=${countryname}`;
     console.log(url);
     try {
         let result = await fetch(url);
@@ -21,7 +21,8 @@ async function getCurrentAPI() {
         let city = weatherData.city_name;
         let state_code = weatherData.state_code;
         let country = weatherData.country_code;
-        let temp = weatherData.temp;
+        let tempC = weatherData.temp;
+        let tempF = (tempC * 9/5) + 32; // Convert Celsius to Fahrenheit
         let description = weatherData.weather.description;
         let wind_spd = weatherData.wind_spd;
         let rh = weatherData.rh;
@@ -32,7 +33,7 @@ async function getCurrentAPI() {
             <p>State: ${state_code}</p>
             <p>Country: ${country}</p>
             <p>Postal Code: ${postal_code}</p>
-            <p>Temperature: ${temp}°C</p>
+            <p>Temperature: ${tempF.toFixed(2)}°F</p>
             <p>Weather: ${description}</p>
             <p>Wind Speed: ${wind_spd} m/s</p>
             <p>Humidity: ${rh}%</p>

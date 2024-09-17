@@ -4,14 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
+    <title>Musical Trivia Game</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+
+    </style>
 </head>
 
-<body style="background-color: rgb(188, 188, 224);">
+<body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="index.html" style="margin: 2%;">Home</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
@@ -21,7 +24,10 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="allergyweatherpreparedness.html">AQI Index</a>
+                    <a class="nav-link" href="about.html">About the Designer</a>
+                </li>
+                <li class="nav-item">
+                    <a href="allergyweatherpreparedness.html">AQI Index</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="checklist.html">Printable Checklist</a>
@@ -36,9 +42,9 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="curvetheboredom.html">Trivia Games Home</a>
-                        <a class="dropdown-item" href="tvtrivia.html">TV Trivia Game</a>
+                        <a class="dropdown-item" href="Musicaltrivia.html">Musical Trivia Game</a>
                         <a class="dropdown-item" href="musicaltrivia.html">Musical Theater Trivia Game</a>
-                        <a class="dropdown-item" href="sportstrivia.html">Sports Trivia Game</a>
+                        <a class="dropdown-item" href="Musicaltrivia.html">Musical Trivia Game</a>
                         <a class="dropdown-item" href="cartoonstrivia.html">Cartoon & Animation Trivia Game</a>
                     </div>
                 </li>
@@ -49,45 +55,45 @@
         <img src="prepared.png" alt="prepared logo"
             style="align-items: end; width: 60px; height: 60px; margin-left:2%;">
     </nav>
-    <h2>About the Designer</h2>
-    <div class="container" style="padding-top: 5%;">
-        <div class="row">
-            <div class="col-md-3">
-                <!--Image is split into 4 quadrants to link for each social page starting with the top left, top right, bottom left, then bottom right of the image.-->
-                <img src="trincell.png" alt="picture of Trincell" usemap="#trincellsocials" width="200" height="200"
-                    style="align-content: flex-start;">
-                <map name="trincellsocials">
-                    <!-- GitHub Profile Top Left -->
-                    <area shape="rect" coords="0,0,100,100" href="https://github.com/trincellshelvin"
-                        alt="GitHub Profile">
-                    <!-- LinkedIn Profile Top Right-->
-                    <area shape="rect" coords="100,0,200,100"
-                        href="https://www.linkedin.com/in/trincell-shelvin-28126b46/" alt="LinkedIn Profile">
-                    <!-- Facebook Profile Bottom Left -->
-                    <area shape="rect" coords="0,100,100,200" href="https://www.facebook.com/trincell/"
-                        alt="Facebook Profile">
-                    <!-- Twitter Profile Bottom Right-->
-                    <area shape="rect" coords="100,100,200,200" href="https://x.com/Trincell" alt="Twitter Profile">
-                </map>
-            </div>
-            <div class="col-md-9" style="text-align: justify; padding-top: 3%;">
-                <p>
-                    This journey has been a long one with learning new ways and tools to design any website or app. I
-                    originally started this journey in 1999 while in school for Business Information Systems where I had
-                    an emphasis in Web Design.
-                </p>
-                <p>
-                    This preparedness app is a labor of pride for me as I am also an allergy sufferer with an underlying
-                    condition that can be triggered due to different indoor and outdoor environments. It will serve as a
-                    list to get prepared for the weather event and a place to look up data on Air Quality Index with
-                    Health Tips and Trivia Games for those down times during the event.
-                </p>
+    <div class="hero-image5">
+        <div class="hero-text5">
+            <h1>Musical Trivia Game</h1>
+            <div class="opacity-75">
+                <div class="container text-center">
+                    <div class="row align-items-start">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title">Trivia Question</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <h6>Enter name then click save. Then start Trivia Questions to save your score.</h6>
+                                            <div class="input-group mb-3">
+                                                <input type="text" class="form-control" id="userName" placeholder="User Name..."
+                                                    aria-label="User Name" aria-describedby="button-addon1">
+                                                <button class="btn btn-primary" type="button" id="saveUserName">Save</button>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div id="Musicaltrivia-container"
+                                                style="border: 2px solid black; width: fit-content;">
+                                                <button class="btn btn-primary" id="getQuestions">Get Questions</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
+    <script src="Musical.js"></script>
+    <script src="trivia.js"></script>
     <script src="script.js"></script>
-    <script src="allergyweatherpreparedness.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>

@@ -1,3 +1,4 @@
+/*Splash Page*/
 .hero-image {
     background-image: linear-gradient(rgba(256,256,256,0), rgba(256,256,256,1)), url(weathereventsallergiesandrespiratory.png);
     height: 85vh;
@@ -24,6 +25,7 @@ main {
 .hero-list {
     justify-content: space-around;
 }
+/*Trivia Splash Page*/
 .hero-image2 {
     background-image: linear-gradient(rgba(256,256,256,0), rgba(256,256,256,10)), url(gametrivia.png);
     height: 85vh;
@@ -63,7 +65,7 @@ a:link, a:visited {
     nav {
         align-content: center;
     }
-
+/* TV Trivia*/
     .hero-image3 {
         background-image: linear-gradient(rgba(256,256,256,0), rgba(256,256,256,10)), url(tvtrivia.png);
         height: 85vh;
@@ -100,8 +102,14 @@ a:link, a:visited {
         justify-content: space-around;
     }
 
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        padding: 20px;
+    }
+    /*Sports Trivia*/
     .hero-image5 {
-        background-image: linear-gradient(rgba(256,256,256,0), rgba(256,256,256,10)), url(sportstrivia.png);
+        background-image: linear-gradient(rgba(256, 256, 256, 0), rgba(256, 256, 256, 0.1)), url(sportstrivia.png);
         height: 85vh;
         background-size: cover;
         position: relative;
@@ -109,7 +117,7 @@ a:link, a:visited {
     
     .hero-text5 {
         color: black;
-        position:absolute;
+        position: absolute;
         bottom: 10%;
         right: 30px;
     }
@@ -118,6 +126,11 @@ a:link, a:visited {
         justify-content: space-around;
     }
     
+    .card {
+        background: rgba(255, 255, 255, 0.8);
+        border: none;
+    }
+    /*Cartoons Trivia*/
     .hero-image6 {
         background-image: linear-gradient(rgba(256,256,256,0), rgba(256,256,256,10)), url(cartoonstrivia.png);
         height: 85vh;
@@ -135,3 +148,5 @@ a:link, a:visited {
     .hero-paragraph6 {
         justify-content: space-around;
     }
+
+    

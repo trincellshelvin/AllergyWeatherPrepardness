@@ -1,28 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emergency Kit Checklist</title>
     <link rel="stylesheet" href="style.css">
+    
 </head>
-<nav id="navlinks">
+<nav id="navlinks" style="background-color: lightgrey;">
+    <h2 style="background-color: lightgrey; text-align: right; color: blueviolet; margin-right: 3%;">Welcome to Allergy & Weather Preparedness!</h2>
     <button type="button" class="btn btn-outline-primary">
         <a href="index.html">Home</a>
-    </button> 
-    <button type="button" class="btn btn-outline-primary">
-        <a href="about.html">About Designer</a>
-    </button> 
-    <button type="button" class="btn btn-outline-primary"></button>
-        <a href="allergyweatherpreparedness.html">Air Quality Index</a>
     </button>
     <button type="button" class="btn btn-outline-primary">
-        <a href="curvetheboredom.html">Trivia</a>
+    <a href="allergyweatherpreparedness.html">Air Quality Index</a>
     </button>
     <button type="button" class="btn btn-outline-primary">
         <a href="https://www.211.org/get-help/disaster-recovery">211 Disaster Recovery</a>
     </button>
 </nav>
+
 <body>
     <div class="hero-image">
         <div class="hero-text">
@@ -42,14 +40,14 @@
                             "All Medications including Those for Allergies (and any inhalers and/or equipment)",
                             "List of Medications and Use in a plastic bag with medications in a separate bag together"
                         ];
-            
+
                         const checklistElement = document.getElementById('checklist');
                         emergencyKitChecklist.forEach(item => {
                             const listItem = document.createElement('div');
                             listItem.innerHTML = `<input type="checkbox" id="${item}" name="${item}"><label for="${item}">${item}</label>`;
                             checklistElement.appendChild(listItem);
                         });
-            
+
                         function printChecklist() {
                             window.print();
                         }
@@ -60,11 +58,14 @@
             <div style="padding: 5%; text-align: justify; font-size: x-small;">
                 <p><b>*Examples of Emergency Supplies:</b></p>
                 <p>Fire starters, hand sanitizer, water, thermal blankets, rain gear, rope, tarp,
-                    permanent markers, road hazard equipment (for vehicles), flashlights, batteries, device charges, battery
-                    packs(rechargeable), cutting tools (saw and/or knife), trash bags, and any other supplies that you deem
+                    permanent markers, road hazard equipment (for vehicles), flashlights, batteries, device charges,
+                    battery
+                    packs(rechargeable), cutting tools (saw and/or knife), trash bags, and any other supplies that you
+                    deem
                     necessary for your area. </p>
             </div>
         </div>
     </div>
 </body>
+
 </html>
