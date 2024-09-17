@@ -17,6 +17,121 @@
 }
 main {
     background-color: rgb(226, 229, 228);
-    margin-right: 5%;
-    margin-left: 5%;
+    margin-right: 6%;
+    margin-left: 6%;
 }
+
+.hero-list {
+    justify-content: space-around;
+}
+.hero-image2 {
+    background-image: linear-gradient(rgba(256,256,256,0), rgba(256,256,256,10)), url(gametrivia.png);
+    height: 85vh;
+    background-size: cover;
+    position: relative;
+}
+
+.hero-text2 {
+    color: black;
+    position:absolute;
+    bottom: 10%;
+    right: 30px;
+}
+
+.hero-paragraph2 {
+    justify-content: space-around;
+}
+
+.hero-container {
+    text-align: center;
+
+}
+
+a:link, a:visited {
+    background-color: lightgrey;
+    color: purple;
+    padding: 7px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    }
+    
+    a:hover, a:active {
+    background-color: lightgrey;
+    }
+
+    nav {
+        align-content: center;
+    }
+
+    .hero-image3 {
+        background-image: linear-gradient(rgba(256,256,256,0), rgba(256,256,256,10)), url(tvtrivia.png);
+        height: 85vh;
+        background-size: cover;
+        position: relative;
+    }
+    
+    .hero-text3 {
+        color: black;
+        position:absolute;
+        bottom: 10%;
+        right: 30px;
+    }
+    
+    .hero-paragraph3 {
+        justify-content: space-around;
+    }
+
+    .hero-image4 {
+        background-image: linear-gradient(rgba(256,256,256,0), rgba(256,256,256,10)), url(musicaltrivia.png);
+        height: 85vh;
+        background-size: cover;
+        position: relative;
+    }
+    
+    .hero-text4 {
+        color: black;
+        position:absolute;
+        bottom: 10%;
+        right: 30px;
+    }
+    
+    .hero-paragraph4 {
+        justify-content: space-around;
+    }
+
+    .hero-image5 {
+        background-image: linear-gradient(rgba(256,256,256,0), rgba(256,256,256,10)), url(sportstrivia.png);
+        height: 85vh;
+        background-size: cover;
+        position: relative;
+    }
+    
+    .hero-text5 {
+        color: black;
+        position:absolute;
+        bottom: 10%;
+        right: 30px;
+    }
+    
+    .hero-paragraph5 {
+        justify-content: space-around;
+    }
+    
+    .hero-image6 {
+        background-image: linear-gradient(rgba(256,256,256,0), rgba(256,256,256,10)), url(cartoonstrivia.png);
+        height: 85vh;
+        background-size: cover;
+        position: relative;
+    }
+    
+    .hero-text6 {
+        color: black;
+        position:absolute;
+        bottom: 10%;
+        right: 30px;
+    }
+    
+    .hero-paragraph6 {
+        justify-content: space-around;
+    }

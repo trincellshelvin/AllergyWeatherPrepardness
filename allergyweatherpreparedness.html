@@ -11,8 +11,79 @@
 </head>
 
 <body>
+    <nav id="navlinks">
+        <button type="button" class="btn btn-outline-primary">
+            <a href="index.html">Home</a>
+        </button> 
+        <button type="button" class="btn btn-outline-primary">
+            <a href="about.html">About Designer</a>
+        </button> 
+        <button type="button" class="btn btn-outline-primary"></button>
+            <a href="checklist.html">Printable Checklist</a>
+        </button>
+        <button type="button" class="btn btn-outline-primary">
+            <a href="curvetheboredom.html">Trivia</a>
+        </button>
+        <button type="button" class="btn btn-outline-primary">
+            <a href="https://www.211.org/get-help/disaster-recovery">211 Disaster Recovery</a>
+        </button>
+    </nav>
+    <header>
+        <div class="hero-image">
+            <div class="hero-text">
+                <h1>Allergy Weather Preparedness</h1>
+                <div class="hero-paragraph">
+                    <p>We must all get prepared for those emergency weather events.</p>
+                    <p>Get your Air Quality Data Below</p>
+                </div>
+            </div>
+        </div>
+    </header>
 
-    
+    <main>
+        <div class="container text-justify">
+            <div class="row row-col-2">
+                <div class="col-md-6">
+                    <form>
+                        <input type="text" required name="postal_code" id="postal_code"
+                            placeholder="Zip or Postal Code:"><br>
+                        <input type="text" required name="countryname" id="countryname" placeholder="Country">
+                        <p><em><b>Below for Air Quality for your Area...</b></em></p>
+                        <button type="button" id="aqidata">Click for AQI</button>
+                    </form>
+                    <div class="card" style="width: 40rem; background-color: aquamarine;">
+                        <div class="card-body">
+                            <h5 class="card-title">Area Index Data</h5>
+                            <p class="card-text" id="airOutput"></p>
+                            <a href="https://www.211.org/get-help/disaster-recovery" class="card-link"
+                                style="font-weight: bold;" itemid="navlinks">211 Disaster Recovery</a> <br>
+                            <a href="checklist.html" class="card-link" style="font-weight: bold;"
+                                id="navlinks">Printable
+                                Checklist</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card" style="width: 40rem; background-color: aquamarine;">
+                        <div class="card-body">
+                            <h6>In the mean time..Here are some games to help with boredom and a little bit of health information about Allergies.</h6>
+                            <button type="button" class="btn-outline-primary"><a href="curvetheboredom.html">Curve the Boredom</a></button> <br>
+                            <button type="button" class="btn-outline-primary"><a
+                                    href="https://www.healthline.com/health/home-remedies-for-allergies">Natural
+                                    Health
+                                    Resources-Healthline</a></button>
+                            <button type="button" class="btn-outline-primary"><a
+                                    href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8532887/">An Introduction to
+                                    Rhinitis-NIH
+                                    National Library of Medicine</a></button>
+                            <button type="button" class="btn-outline-primary"><a
+                                    href="https://www.medicinenet.com/best_home_remedies_for_upper_respiratory_infection/article.htm">Examples
+                                    of Home Remedies</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </main>
 
     <script src="allergyweatherpreparedness.js"></script>
     <script src="script.js"></script>

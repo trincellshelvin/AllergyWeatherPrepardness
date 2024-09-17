@@ -1,0 +1,66 @@
+[
+    {
+        "DateIssue": "2024-09-11",
+        "DateForecast": "2024-09-12",
+        "ReportingArea": "Baton Rouge Area",
+        "StateCode": "LA",
+        "Latitude": 30.449,
+        "Longitude": -91.126,
+        "ParameterName": "O3",
+        "AQI": 35,
+        "Category": {
+            "Number": 1,
+            "Name": "Good"
+        },
+        "ActionDay": false,
+        "Discussion": "Wednesday, as Hurricane Francine makes landfall in Louisiana, widespread heavy rain and thunderstorms will enhance mixing and reduce ozone formation. Furthermore, gusty winds will effectively disperse pollutants. Thus, AQI levels will be Good to high-Good.\r\n\r\nThursday, as Francine gradually departs to the northeast, lingering clouds and scattered showers will inhibit ozone production, and northerly to northwesterly winds will disperse pollutants. Therefore, AQI levels will remain Good to high-Good.\r\n\r\nFriday, upper-level high pressure over Texas will hinder atmospheric mixing and produce mostly sunny skies across Louisiana. Furthermore, temperatures around 85-90F will promote ozone production, while light westerly to west-southwesterly winds will limit dispersion. In addition, thin-density smoke in the central and northern portion of the state will enhance ozone formation. These conditions will yield low- to mid-Moderate AQI levels statewide."
+    },
+    {
+        "DateIssue": "2024-09-11",
+        "DateForecast": "2024-09-12",
+        "ReportingArea": "Baton Rouge Area",
+        "StateCode": "LA",
+        "Latitude": 30.449,
+        "Longitude": -91.126,
+        "ParameterName": "PM2.5",
+        "AQI": 44,
+        "Category": {
+            "Number": 1,
+            "Name": "Good"
+        },
+        "ActionDay": false,
+        "Discussion": "Wednesday, as Hurricane Francine makes landfall in Louisiana, widespread heavy rain and thunderstorms will enhance mixing and reduce ozone formation. Furthermore, gusty winds will effectively disperse pollutants. Thus, AQI levels will be Good to high-Good.\r\n\r\nThursday, as Francine gradually departs to the northeast, lingering clouds and scattered showers will inhibit ozone production, and northerly to northwesterly winds will disperse pollutants. Therefore, AQI levels will remain Good to high-Good.\r\n\r\nFriday, upper-level high pressure over Texas will hinder atmospheric mixing and produce mostly sunny skies across Louisiana. Furthermore, temperatures around 85-90F will promote ozone production, while light westerly to west-southwesterly winds will limit dispersion. In addition, thin-density smoke in the central and northern portion of the state will enhance ozone formation. These conditions will yield low- to mid-Moderate AQI levels statewide."
+    },
+    {
+        "DateIssue": "2024-09-11",
+        "DateForecast": "2024-09-13",
+        "ReportingArea": "Baton Rouge Area",
+        "StateCode": "LA",
+        "Latitude": 30.449,
+        "Longitude": -91.126,
+        "ParameterName": "O3",
+        "AQI": 64,
+        "Category": {
+            "Number": 2,
+            "Name": "Moderate"
+        },
+        "ActionDay": false,
+        "Discussion": "Wednesday, as Hurricane Francine makes landfall in Louisiana, widespread heavy rain and thunderstorms will enhance mixing and reduce ozone formation. Furthermore, gusty winds will effectively disperse pollutants. Thus, AQI levels will be Good to high-Good.\r\n\r\nThursday, as Francine gradually departs to the northeast, lingering clouds and scattered showers will inhibit ozone production, and northerly to northwesterly winds will disperse pollutants. Therefore, AQI levels will remain Good to high-Good.\r\n\r\nFriday, upper-level high pressure over Texas will hinder atmospheric mixing and produce mostly sunny skies across Louisiana. Furthermore, temperatures around 85-90F will promote ozone production, while light westerly to west-southwesterly winds will limit dispersion. In addition, thin-density smoke in the central and northern portion of the state will enhance ozone formation. These conditions will yield low- to mid-Moderate AQI levels statewide."
+    },
+    {
+        "DateIssue": "2024-09-11",
+        "DateForecast": "2024-09-13",
+        "ReportingArea": "Baton Rouge Area",
+        "StateCode": "LA",
+        "Latitude": 30.449,
+        "Longitude": -91.126,
+        "ParameterName": "PM2.5",
+        "AQI": 50,
+        "Category": {
+            "Number": 1,
+            "Name": "Good"
+        },
+        "ActionDay": false,
+        "Discussion": "Wednesday, as Hurricane Francine makes landfall in Louisiana, widespread heavy rain and thunderstorms will enhance mixing and reduce ozone formation. Furthermore, gusty winds will effectively disperse pollutants. Thus, AQI levels will be Good to high-Good.\r\n\r\nThursday, as Francine gradually departs to the northeast, lingering clouds and scattered showers will inhibit ozone production, and northerly to northwesterly winds will disperse pollutants. Therefore, AQI levels will remain Good to high-Good.\r\n\r\nFriday, upper-level high pressure over Texas will hinder atmospheric mixing and produce mostly sunny skies across Louisiana. Furthermore, temperatures around 85-90F will promote ozone production, while light westerly to west-southwesterly winds will limit dispersion. In addition, thin-density smoke in the central and northern portion of the state will enhance ozone formation. These conditions will yield low- to mid-Moderate AQI levels statewide."
+    }
+]
