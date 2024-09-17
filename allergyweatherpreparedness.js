@@ -5,9 +5,11 @@ async function getCurrentAPI() {
     let airOutput = document.getElementById("airOutput");
     let postal_code = postal_codeInput.value;
     let countryname = countrynameInput.value;
-    let apiKey = 'YOUR_API_KEY';
+    let apiKey = '952e27abaa244647bf48d771ba629886';
+    let url = `https://api.weatherbit.io/v2.0/current?key=${apiKey}&postal_code=${postal_code}&country=${countryname}`
+    console.log(url);
     try {
-        let result = await fetch(`https://api.weatherbit.io/v2.0/current?key=${apiKey}&postal_code=${postal_code}&country=${countryname}`);
+        let result = await fetch(url);
         if (!result.ok) {
             throw new Error("Failed to fetch data");
         }
