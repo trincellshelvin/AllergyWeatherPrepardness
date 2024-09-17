@@ -1,21 +1,20 @@
-//TV Trivia
-
+// TV Trivia
 const tvurl = 'https://opentdb.com/api.php?amount=30&category=14&type=boolean';
 const tvONE_DAY = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
 
-async function getTriviaQuestions() {
+async function getTVTriviaQuestions() {
     try {
         let response = await fetch(tvurl);
         let data = await response.json();
-        localStorage.setItem('triviaQuestions', JSON.stringify(data.results));
-        localStorage.setItem('fetchTimestamp', Date.now());
-        displayQuestions(data.results);
+        localStorage.setItem('tvTriviaQuestions', JSON.stringify(data.results));
+        localStorage.setItem('tvFetchTimestamp', Date.now());
+        displayTVQuestions(data.results);
     } catch (error) {
-        console.error('Error fetching trivia questions:', error);
+        console.error('Error fetching TV trivia questions:', error);
     }
 }
 
-function displayQuestions(questions) {
+function displayTVQuestions(questions) {
     const triviaDiv = document.getElementById('tvtrivia-container');
     triviaDiv.innerHTML = ''; // Clear any existing content
 
@@ -26,45 +25,43 @@ function displayQuestions(questions) {
     });
 }
 
-function loadQuestionsFromLocalStorage() {
-    const storedQuestions = localStorage.getItem('triviaQuestions');
-    const fetchTimestamp = localStorage.getItem('fetchTimestamp');
+function loadTVQuestionsFromLocalStorage() {
+    const storedQuestions = localStorage.getItem('tvTriviaQuestions');
+    const fetchTimestamp = localStorage.getItem('tvFetchTimestamp');
 
     if (storedQuestions && fetchTimestamp) {
         const age = Date.now() - fetchTimestamp;
-        if (age < ONE_DAY) {
+        if (age < tvONE_DAY) {
             const questions = JSON.parse(storedQuestions);
-            displayQuestions(questions);
+            displayTVQuestions(questions);
             return;
         }
     }
-    getTriviaQuestions();
+    getTVTriviaQuestions();
 }
 
-document.getElementById('refresh-questions').addEventListener('click', getTriviaQuestions);
+document.getElementById('refresh-tv-questions').addEventListener('click', getTVTriviaQuestions);
 
-loadQuestionsFromLocalStorage();
+loadTVQuestionsFromLocalStorage();
 
-//Musical Theater Trivia
-
-
+// Musical Theater Trivia
 const Murl = 'https://opentdb.com/api.php?amount=30&category=13';
 const MONE_DAY = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
 
-async function getTriviaQuestions() {
+async function getMusicalTriviaQuestions() {
     try {
-        let response = await fetch(url);
+        let response = await fetch(Murl);
         let data = await response.json();
-        localStorage.setItem('triviaQuestions', JSON.stringify(data.results));
-        localStorage.setItem('fetchTimestamp', Date.now());
-        displayQuestions(data.results);
+        localStorage.setItem('musicalTriviaQuestions', JSON.stringify(data.results));
+        localStorage.setItem('musicalFetchTimestamp', Date.now());
+        displayMusicalQuestions(data.results);
     } catch (error) {
-        console.error('Error fetching trivia questions:', error);
+        console.error('Error fetching musical theater trivia questions:', error);
     }
 }
 
-function displayQuestions(questions) {
-    const triviaDiv = document.getElementById('trivia-questions');
+function displayMusicalQuestions(questions) {
+    const triviaDiv = document.getElementById('musicaltrivia-container');
     triviaDiv.innerHTML = ''; // Clear any existing content
 
     questions.forEach((question, index) => {
@@ -74,43 +71,42 @@ function displayQuestions(questions) {
     });
 }
 
-function loadQuestionsFromLocalStorage() {
-    const storedQuestions = localStorage.getItem('triviaQuestions');
-    const fetchTimestamp = localStorage.getItem('fetchTimestamp');
+function loadMusicalQuestionsFromLocalStorage() {
+    const storedQuestions = localStorage.getItem('musicalTriviaQuestions');
+    const fetchTimestamp = localStorage.getItem('musicalFetchTimestamp');
 
     if (storedQuestions && fetchTimestamp) {
         const age = Date.now() - fetchTimestamp;
-        if (age < ONE_DAY) {
+        if (age < MONE_DAY) {
             const questions = JSON.parse(storedQuestions);
-            displayQuestions(questions);
+            displayMusicalQuestions(questions);
             return;
         }
     }
-    getTriviaQuestions();
+    getMusicalTriviaQuestions();
 }
 
-document.getElementById('refresh-questions').addEventListener('click', getTriviaQuestions);
+document.getElementById('refresh-musical-questions').addEventListener('click', getMusicalTriviaQuestions);
 
-loadQuestionsFromLocalStorage();
+loadMusicalQuestionsFromLocalStorage();
 
-//Cartoons & Animation Trivia
-
+// Cartoons & Animation Trivia
 const CAurl = 'https://opentdb.com/api.php?amount=30&category=32';
 const CAONE_DAY = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
 
-async function getTriviaQuestions() {
+async function getCartoonsTriviaQuestions() {
     try {
-        let response = await fetch(Curl);
+        let response = await fetch(CAurl);
         let data = await response.json();
-        localStorage.setItem('triviaQuestions', JSON.stringify(data.results));
-        localStorage.setItem('fetchTimestamp', Date.now());
-        displayQuestions(data.results);
+        localStorage.setItem('cartoonsTriviaQuestions', JSON.stringify(data.results));
+        localStorage.setItem('cartoonsFetchTimestamp', Date.now());
+        displayCartoonsQuestions(data.results);
     } catch (error) {
-        console.error('Error fetching trivia questions:', error);
+        console.error('Error fetching cartoons & animation trivia questions:', error);
     }
 }
 
-function displayQuestions(questions) {
+function displayCartoonsQuestions(questions) {
     const triviaDiv = document.getElementById('cartoonstrivia-container');
     triviaDiv.innerHTML = ''; // Clear any existing content
 
@@ -121,44 +117,43 @@ function displayQuestions(questions) {
     });
 }
 
-function loadQuestionsFromLocalStorage() {
-    const storedQuestions = localStorage.getItem('triviaQuestions');
-    const fetchTimestamp = localStorage.getItem('fetchTimestamp');
+function loadCartoonsQuestionsFromLocalStorage() {
+    const storedQuestions = localStorage.getItem('cartoonsTriviaQuestions');
+    const fetchTimestamp = localStorage.getItem('cartoonsFetchTimestamp');
 
     if (storedQuestions && fetchTimestamp) {
         const age = Date.now() - fetchTimestamp;
-        if (age < ONE_DAY) {
+        if (age < CAONE_DAY) {
             const questions = JSON.parse(storedQuestions);
-            displayQuestions(questions);
+            displayCartoonsQuestions(questions);
             return;
         }
     }
-    getTriviaQuestions();
+    getCartoonsTriviaQuestions();
 }
 
-document.getElementById('refresh-questions').addEventListener('click', getTriviaQuestions);
+document.getElementById('refresh-cartoons-questions').addEventListener('click', getCartoonsTriviaQuestions);
 
-loadQuestionsFromLocalStorage();
+loadCartoonsQuestionsFromLocalStorage();
 
-//Sports Trivia
-
+// Sports Trivia
 const Surl = 'https://opentdb.com/api.php?amount=30&category=21';
 const SONE_DAY = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
 
-async function getTriviaQuestions() {
+async function getSportsTriviaQuestions() {
     try {
-        let response = await fetch(surl);
+        let response = await fetch(Surl);
         let data = await response.json();
-        localStorage.setItem('triviaQuestions', JSON.stringify(data.results));
-        localStorage.setItem('fetchTimestamp', Date.now());
-        displayQuestions(data.results);
+        localStorage.setItem('sportsTriviaQuestions', JSON.stringify(data.results));
+        localStorage.setItem('sportsFetchTimestamp', Date.now());
+        displaySportsQuestions(data.results);
     } catch (error) {
-        console.error('Error fetching trivia questions:', error);
+        console.error('Error fetching sports trivia questions:', error);
     }
 }
 
-function displayQuestions(questions) {
-    const triviaDiv = document.getElementById('trivia-questions');
+function displaySportsQuestions(questions) {
+    const triviaDiv = document.getElementById('sportstrivia-container');
     triviaDiv.innerHTML = ''; // Clear any existing content
 
     questions.forEach((question, index) => {
@@ -168,22 +163,21 @@ function displayQuestions(questions) {
     });
 }
 
-function loadQuestionsFromLocalStorage() {
-    const storedQuestions = localStorage.getItem('triviaQuestions');
-    const fetchTimestamp = localStorage.getItem('fetchTimestamp');
+function loadSportsQuestionsFromLocalStorage() {
+    const storedQuestions = localStorage.getItem('sportsTriviaQuestions');
+    const fetchTimestamp = localStorage.getItem('sportsFetchTimestamp');
 
     if (storedQuestions && fetchTimestamp) {
         const age = Date.now() - fetchTimestamp;
-        if (age < ONE_DAY) {
+        if (age < SONE_DAY) {
             const questions = JSON.parse(storedQuestions);
-            displayQuestions(questions);
+            displaySportsQuestions(questions);
             return;
         }
     }
-    getTriviaQuestions();
+    getSportsTriviaQuestions();
 }
 
-document.getElementById('refresh-questions').addEventListener('click', getTriviaQuestions);
+document.getElementById('refresh-sports-questions').addEventListener('click', getSportsTriviaQuestions);
 
-loadQuestionsFromLocalStorage();
-
+loadSportsQuestionsFromLocalStorage();
