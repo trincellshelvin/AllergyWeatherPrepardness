@@ -78,11 +78,6 @@ window.addEventListener('beforeunload', () => {
     localStorage.removeItem('finalScore');
 });
 
-window.addEventListener('load', () => {
-    loadUserData();
-    loadProgress();
-});
-
 function saveProgress() {
     const progressData = {
         level: currentLevel,
@@ -102,36 +97,36 @@ function loadProgress() {
 
 window.addEventListener('beforeunload', saveProgress);
 
-function saveUserData(username, score) {
-    localStorage.setItem('username', username);
+function saveUserData(userName, score) {
+    localStorage.setItem('userName', userName);
     localStorage.setItem('userScore', score);
 }
 
 function getUserData() {
     return {
-        username: localStorage.getItem('username') || 'Guest',
+        userName: localStorage.getItem('userName') || 'Guest',
         score: localStorage.getItem('userScore') || 0
     };
 }
 
-function updateUserInfoDisplay(username, score) {
-    document.getElementById('username').textContent = username;
+function updateUserInfoDisplay(userName, score) {
+    document.getElementById('userName').textContent = userName;
     document.getElementById('score').textContent = score;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     const userData = getUserData();
-    updateUserInfoDisplay(userData.username, userData.score);
+    updateUserInfoDisplay(userData.userName, userData.score);
 });
 
 function updateScore(newScore) {
     const userData = getUserData();
-    saveUserData(userData.username, newScore);
-    updateUserInfoDisplay(userData.username, newScore);
+    saveUserData(userData.userName, newScore);
+    updateUserInfoDisplay(userData.userName, newScore);
 }
 
-function setUsername(username) {
+function setuserName(userName) {
     const userData = getUserData();
-    saveUserData(username, userData.score);
-    updateUserInfoDisplay(username, userData.score);
+    saveUserData(userName, userData.score);
+    updateUserInfoDisplay(userName, userData.score);
 }
