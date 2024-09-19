@@ -151,10 +151,74 @@ a:link, a:visited {
         justify-content: space-around;
     }
 /*Japanese Anime*/
+.hero-image7 {
+    background-image: linear-gradient(rgba(256,256,256,0), rgba(256,256,256,10)), url(japaneseanime.png);
+    height: 85vh;
+    background-size: cover;
+    position: relative;
+}
 
+.hero-text7 {
+    color: black;
+    position:absolute;
+    bottom: 10%;
+    right: 30px;
+}
+
+.hero-paragraph7 {
+    justify-content: space-around;
+}
 /*Science & Nature*/
+.hero-image8 {
+    background-image: linear-gradient(rgba(256,256,256,0), rgba(256,256,256,10)), url(sciencenature.jpeg);
+    height: 85vh;
+    background-size: cover;
+    position: relative;
+}
 
+.hero-text8 {
+    color: black;
+    position:absolute;
+    bottom: 10%;
+    right: 30px;
+}
+
+.hero-paragraph8 {
+    justify-content: space-around;
+}
 /*Animals*/
+.hero-image9 {
+    background-image: linear-gradient(rgba(256,256,256,0), rgba(256,256,256,10)), url(animals.jpeg);
+    height: 85vh;
+    background-size: cover;
+    position: relative;
+}
 
+.hero-text9 {
+    color: black;
+    position:absolute;
+    bottom: 10%;
+    right: 30px;
+}
+
+.hero-paragraph9 {
+    justify-content: space-around;
+}
 /*Comics*/
-    
+.hero-image10 {
+    background-image: linear-gradient(rgba(256,256,256,0), rgba(256,256,256,10)), url(comics.jpeg);
+    height: 85vh;
+    background-size: cover;
+    position: relative;
+}
+
+.hero-text10 {
+    color: black;
+    position:absolute;
+    bottom: 10%;
+    right: 30px;
+}
+
+.hero-paragraph10 {
+    justify-content: space-around;
+}
