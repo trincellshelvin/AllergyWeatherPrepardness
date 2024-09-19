@@ -4,22 +4,22 @@ const ONE_DAY = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
 let currentQuestionIndex = 0;
 let score = 0;
 
-async function getSportsTriviaQuestions() {
+async function getTVTriviaQuestions() {
     try {
         let response = await fetch(url);
         let data = await response.json();
-        localStorage.setItem('sportsTriviaQuestions', JSON.stringify(data.results));
-        localStorage.setItem('sportsFetchTimestamp', Date.now());
+        localStorage.setItem('tvtriviaTriviaQuestions', JSON.stringify(data.results));
+        localStorage.setItem('tvtriviaFetchTimestamp', Date.now());
         displayCurrentQuestion();
     } catch (error) {
-        console.error('Error fetching sports trivia questions:', error);
+        console.error('Error fetching trivia questions:', error);
         alert('Failed to fetch trivia questions. Please try again later.');
     }
 }
 
 function displayCurrentQuestion() {
-    const questions = JSON.parse(localStorage.getItem('sportsTriviaQuestions'));
-    const triviaDiv = document.getElementById('sportstrivia-container');
+    const questions = JSON.parse(localStorage.getItem('tvtriviaTriviaQuestions'));
+    const triviaDiv = document.getElementById('tvtriviatrivia-container');
     triviaDiv.innerHTML = ''; // Clear any existing content
 
     if (currentQuestionIndex < questions.length) {
@@ -57,9 +57,9 @@ function updateScore() {
     document.getElementById('score').textContent = score;
 }
 
-function loadSportsQuestionsFromLocalStorage() {
-    const storedQuestions = localStorage.getItem('sportsTriviaQuestions');
-    const fetchTimestamp = localStorage.getItem('sportsFetchTimestamp');
+function loadtvtriviaQuestionsFromLocalStorage() {
+    const storedQuestions = localStorage.getItem('tvtriviaTriviaQuestions');
+    const fetchTimestamp = localStorage.getItem('tvtriviaFetchTimestamp');
 
     if (storedQuestions && fetchTimestamp) {
         const age = Date.now() - fetchTimestamp;
@@ -68,10 +68,10 @@ function loadSportsQuestionsFromLocalStorage() {
             return;
         }
     }
-    getSportsTriviaQuestions();
+    getTVTriviaQuestions();
 }
 
-document.getElementById('getQuestions').addEventListener('click', getSportsTriviaQuestions);
+document.getElementById('getQuestions').addEventListener('click', getTVTriviaQuestions);
 
 function saveUserName() {
     const userName = document.getElementById('userName').value;
