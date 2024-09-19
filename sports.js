@@ -118,8 +118,8 @@ function getUserData() {
     };
 }
 
-function updateUserInfoDisplay(username, score) {
-    document.getElementById('username').textContent = username;
+function updateUserInfoDisplay(userName, score) {
+    document.getElementById('userName').textContent = userName;
     document.getElementById('score').textContent = score;
 }
 
