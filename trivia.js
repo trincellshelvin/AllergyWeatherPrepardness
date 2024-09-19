@@ -5,7 +5,6 @@ window.addEventListener('beforeunload', () => {
 });
 
 window.addEventListener('load', () => {
-    loadUserData();
     loadProgress();
 });
 
