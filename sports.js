@@ -23,16 +23,10 @@ function displayCurrentQuestion() {
 
     if (currentQuestionIndex < questions.length) {
         const question = questions[currentQuestionIndex];
-        const choices = [...question.incorrect_answers, question.correct_answer].sort(() => Math.random() - 0.5);
         const questionElement = document.createElement('div');
         questionElement.innerHTML = `
             <p>${currentQuestionIndex + 1}. ${question.question}</p>
-            ${choices.map(choice => `
-                <div>
-                    <input type="radio" name="answer" value="${choice}">
-                    <label>${choice}</label>
-                </div>
-            `).join('')}
+            <input type="text" id="answer" placeholder="Your answer" class="form-control">
             <button class="btn btn-primary" onclick="checkAnswer('${question.correct_answer}')">Submit</button>
         `;
         triviaDiv.appendChild(questionElement);
@@ -43,8 +37,8 @@ function displayCurrentQuestion() {
 }
 
 function checkAnswer(correctAnswer) {
-    const userAnswer = document.querySelector('input[name="answer"]:checked').value;
-    if (userAnswer === correctAnswer) {
+    const userAnswer = document.getElementById('answer').value;
+    if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
         score++;
     }
     currentQuestionIndex++;
@@ -72,11 +66,13 @@ function loadSportsQuestionsFromLocalStorage() {
 
 document.getElementById('getQuestions').addEventListener('click', getSportsTriviaQuestions);
 
-function saveUserName() {
+loadSportsQuestionsFromLocalStorage();
+
+document.getElementById('saveUserName').addEventListener('click', () => {
     const userName = document.getElementById('userName').value;
     localStorage.setItem('userName', userName);
     alert('User name saved!');
-}
+});
 
 function loadUserData() {
     const userName = localStorage.getItem('userName');
@@ -89,10 +85,21 @@ function loadUserData() {
     }
 }
 
+loadUserData();
+
+window.addEventListener('beforeunload', () => {
+    localStorage.removeItem('userName');
+    localStorage.removeItem('finalScore');
+});
+
+window.addEventListener('load', () => {
+    loadUserData();
+});
+
 function saveProgress() {
     const progressData = {
-        level: currentQuestionIndex,
-        score: score
+        level: currentLevel,
+        score: currentScore
     };
     localStorage.setItem('progressData', JSON.stringify(progressData));
 }
@@ -100,11 +107,14 @@ function saveProgress() {
 function loadProgress() {
     const progressData = JSON.parse(localStorage.getItem('progressData'));
     if (progressData) {
-        currentQuestionIndex = progressData.level;
-        score = progressData.score;
-        displayCurrentQuestion();
+        currentLevel = progressData.level;
+        currentScore = progressData.score;
+        // Restore progress
     }
 }
+
+window.addEventListener('load', loadProgress);
+window.addEventListener('beforeunload', saveProgress);
 
 function saveUserData(username, score) {
     localStorage.setItem('username', username);
@@ -124,16 +134,8 @@ function updateUserInfoDisplay(userName, score) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    loadUserData();
-    loadProgress();
     const userData = getUserData();
     updateUserInfoDisplay(userData.username, userData.score);
-});
-
-window.addEventListener('beforeunload', () => {
-    saveProgress();
-    localStorage.removeItem('userName');
-    localStorage.removeItem('finalScore');
 });
 
 function updateScore(newScore) {
@@ -142,8 +144,12 @@ function updateScore(newScore) {
     updateUserInfoDisplay(userData.username, newScore);
 }
 
+updateScore();
+
 function setUsername(username) {
     const userData = getUserData();
     saveUserData(username, userData.score);
     updateUserInfoDisplay(username, userData.score);
 }
+
+setUsername('');
