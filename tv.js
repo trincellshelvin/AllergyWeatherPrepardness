@@ -19,7 +19,7 @@ async function getTVTriviaQuestions() {
 
 function displayCurrentQuestion() {
     const questions = JSON.parse(localStorage.getItem('tvtriviaTriviaQuestions'));
-    const triviaDiv = document.getElementById('tvtriviatrivia-container');
+    const triviaDiv = document.getElementById('tvtrivia-container');
     triviaDiv.innerHTML = ''; // Clear any existing content
 
     if (currentQuestionIndex < questions.length) {
@@ -124,7 +124,7 @@ function updateUserInfoDisplay(username, score) {
     document.getElementById('score').textContent = score;
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('', () => {
     loadUserData();
     loadProgress();
     const userData = getUserData();
