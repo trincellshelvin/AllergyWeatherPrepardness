@@ -1,5 +1,5 @@
 let inferenceEndpoint = "https://api-inference.huggingface.co/models/google/gemma-1.1-2b-it";
-let aiName = "";
+let aiName = "Preppy";
 
 function greetUser() {
     return `Welcome to Allergy & Weather Preparedness! I am ${aiName}, what can I search for you today?`
