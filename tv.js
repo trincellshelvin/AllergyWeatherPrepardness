@@ -1,4 +1,4 @@
-const url = 'https://opentdb.com/api.php?amount=30&category=14';
+const url = 'https://opentdb.com/api.php?amount=10&category=14';
 const ONE_DAY = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
 
 let currentQuestionIndex = 0;

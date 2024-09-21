@@ -35,7 +35,6 @@ function getUserQuery() {
 }
 
 function chatBubble() {
-    console.log(greetUser());
     var chatBubble = document.getElementById('chatBubble');
     var chatContent = document.getElementById('chatContent');
     if (chatBubble.classList.contains('expanded')) {
