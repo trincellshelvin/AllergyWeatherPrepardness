@@ -1,11 +1,4 @@
 let inferenceEndpoint = "https://api-inference.huggingface.co/models/google/gemma-2-2b-it";
-let aiName = "Preppy";
-
-function greetUser() {
-    return `Welcome to Allergy & Weather Preparedness! Hi, I am ${aiName}, what can I search for you today?`;
-}
-
-console.log(greetUser());
 
 async function fetchOpenAIResponse(prompt) {
     let token = localStorage.getItem("token");
@@ -41,10 +34,26 @@ function getUserQuery() {
     });
 }
 
-let chatBubble = document.getElementById('chatBubble');
+function chatBubble() {
+    console.log(greetUser());
+    var chatBubble = document.getElementById('chatBubble');
+    var chatContent = document.getElementById('chatContent');
+    if (chatBubble.classList.contains('expanded')) {
+        chatBubble.classList.remove('expanded');
+        chatContent.style.display = 'none';
+        this.textContent = 'Click to Ask a Question...';
+    } else {
+        chatBubble.classList.add('expanded');
+        chatContent.style.display = 'block';
+        this.textContent = 'Collapse';
+    }
+};
 
-chatBubble.addEventListener('click', function () {
-    this.classList.toggle('expanded');
+document.getElementById('submitButton').addEventListener('click', async function() {
+    var userInput = document.getElementById('userInput').value;
+    var responseContainer = document.getElementById('responseContainer');
+    var results = await searchWeb(userInput);
+    responseContainer.innerHTML = results.map(result => `<p><a href="${result.link}" target="_blank">${result.title}</a></p>`).join('');
 });
 
 async function searchWeb(query) {
@@ -56,18 +65,8 @@ async function searchWeb(query) {
     let data = await response.json();
 
     if (data.items) {
-        return data.items.map(item => item.title);
+        return data.items.map(item => ({ title: item.title, link: item.link }));
     } else {
-        return ["No results found"];
+        return [{ title: "No results found", link: "#" }];
     }
 }
-
-function handleSearch() {
-    let query = prompt("Click to Ask a Question...");
-    searchWeb(query).then(results => {
-        console.log(results);
-    });
-}
-
-console.log(searchWeb());
-return searchWeb(query);
