@@ -47,10 +47,9 @@ function chatBubble() {
 };
 
 document.getElementById('chatImage').addEventListener('click', function() {
-    const chatContent = document.getElementById('chatContent');
-    chatContent.style.display = chatContent.style.display === 'none' ? 'block' : 'none';
+    const chatBubble = document.querySelector('.chatBubble');
+    chatBubble.classList.toggle('expanded');
 });
-
 
 document.getElementById('submitButton').addEventListener('click', async function() {
     var userInput = document.getElementById('userInput').value;

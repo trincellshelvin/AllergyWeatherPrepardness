@@ -240,15 +240,16 @@ body {
     border-radius: 10px;
     padding: 10px;
     cursor: pointer;
-    transition: max-height 0.3s ease;
-    max-height: 100px; /* Initial collapsed height */
+    transition: max-height 0.3s ease; max-width: 0.3s ease;
+    max-height: 100px; 
     max-width: 100px;
     overflow: hidden;
     color: blueviolet;
 }
 
 .chat-bubble.expanded {
-    max-height: 300px; /* Expanded height */
+    max-height: 300px; 
+    max-width: 400px;
 }
 
 .chat-bubble p {
@@ -258,7 +259,7 @@ body {
 #chatContent {
     display: flex;
     flex-direction: column;
-    background-color: white;
+    background-color: lightgrey;
     padding: 10px;
     border-radius: 10px;
     position: absolute;
