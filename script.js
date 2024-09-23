@@ -40,19 +40,34 @@ function chatBubble() {
     if (chatBubble.classList.contains('expanded')) {
         chatBubble.classList.remove('expanded');
         chatContent.style.display = 'none';
-        this.textContent = 'Click to Ask a Question...';
     } else {
         chatBubble.classList.add('expanded');
         chatContent.style.display = 'block';
-        this.textContent = 'Collapse';
     }
 };
+
+document.getElementById('chatImage').addEventListener('click', function() {
+    const chatContent = document.getElementById('chatContent');
+    chatContent.style.display = chatContent.style.display === 'none' ? 'block' : 'none';
+});
+
 
 document.getElementById('submitButton').addEventListener('click', async function() {
     var userInput = document.getElementById('userInput').value;
     var responseContainer = document.getElementById('responseContainer');
     var results = await searchWeb(userInput);
     responseContainer.innerHTML = results.map(result => `<p><a href="${result.link}" target="_blank">${result.title}</a></p>`).join('');
+
+    // Add the response message
+    const responseMessage = document.createElement('p');
+    responseMessage.textContent = "Here are your search results...";
+    responseContainer.appendChild(responseMessage);
+
+    // Clear the input field
+    document.getElementById('userInput').value = '';
+    
+    // Append the response to the response container
+    responseContainer.appendChild(responseContainer);
 });
 
 async function searchWeb(query) {
@@ -68,4 +83,5 @@ async function searchWeb(query) {
     } else {
         return [{ title: "No results found", link: "#" }];
     }
-}
+};
+
